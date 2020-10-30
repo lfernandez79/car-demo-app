@@ -1,6 +1,26 @@
 import React from "react";
 
 export const CarTool = () => {
+
+    const cars = [
+        {
+          id: 1, 
+          Make: "Volvo",
+          Model: "V60",
+          Year: 2018,
+          Color: "Perl",
+          Price: 41000,
+        },
+        {
+          id: 2,
+          Make: "Acura",
+          Model: "TLX",
+          Year: 2019,
+          Color: "Blue",
+          Price: 43000,
+        },
+    ];
+
     return (
         <>
           <header>
@@ -19,22 +39,14 @@ export const CarTool = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Volvo</td>
-                    <td>V60</td>
-                    <td>2018</td>
-                    <td>Perl</td>
-                    <td>$40,000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Acura</td>
-                    <td>TLX</td>
-                    <td>2019</td>
-                    <td>Blue</td>
-                    <td>$43,000</td>
-                </tr>
+                {cars.map(car => <tr key={car.id}>
+                    <td>{car.id}</td>
+                    <td>{car.Make}</td>
+                    <td>{car.Model}</td>
+                    <td>{car.Year}</td>
+                    <td>{car.Color}</td>
+                    <td>{car.Price}</td>
+                </tr>)}
             </tbody>
           </table>
         </>
