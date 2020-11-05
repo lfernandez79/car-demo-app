@@ -22,5 +22,5 @@ const carList = [
 ];
 
 ReactDOM.render(
-    <CarTool cars={carList}></CarTool>, document.querySelector("#root"),
+    <CarTool cars={carList} />, document.querySelector("#root"),
 );

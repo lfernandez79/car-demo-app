@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const CarTool = (props) => {
+    // carFrom current state data, setCarForm: function to update the current data and re-dender
+    const [ carForm, setCarForm ] = useState({
+        make: "Volvo",
+        model: "",
+        year: 1900,
+        color: "",
+        price: 0,
+    });
 
     return (
         <>
@@ -30,6 +38,29 @@ export const CarTool = (props) => {
                 </tr>)}
             </tbody>
           </table>
+
+          <form>
+              <div>
+                    <label htmlFor="make-input">Make:</label>
+                    <input type="text" id="make-input" value={carForm.make} />
+              </div>
+              <div>
+                    <label htmlFor="model-input">Model:</label>
+                    <input type="text" id="model-input" value={carForm.model}/>
+              </div>
+              <div>
+                    <label htmlFor="year-input">Year:</label>
+                    <input type="text" id="year-input" value={carForm.year}/>
+              </div>
+              <div>
+                    <label htmlFor="color-input">Color:</label>
+                    <input type="text" id="color-input" value={carForm.color}/>
+              </div>
+              <div>
+                    <label htmlFor="price-input">Price:</label>
+                    <input type="text" id="price-input" value={carForm.price}/>
+              </div>
+          </form>
         </>
     )
 }
