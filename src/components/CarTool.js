@@ -9,12 +9,39 @@ export const CarTool = (props) => {
         color: "",
         price: 0,
     });
+    
+    // add the new car to existing array
+    const [ cars, setCars ] = useState(props.cars.concat())
+    console.log(cars)
+    
+    // event onChange
     const change = (event) => {
         setCarForm({
             ...carForm,
-            [ event.target.name ]: event.target.value
+            // use square bracket to access "input in the form bellow, target = input" 
+            [ event.target.name ]: event.target.type === "number" 
+            ? Number(event.target.value) : event.target.value,
         });
     }
+
+    // add a car function
+    const addCar = () => {
+        setCars(cars.concat({
+            // we need the original form and generate an id getting the max value id
+            ...carForm,
+            id: Math.max(...cars.map(c => c.id)) +1,
+            
+        }));
+        
+        setCarForm({
+            make: "",
+            model: "",
+            year: 1900,
+            color: "",
+            price: 0,
+        });
+    };
+
     console.log(carForm)
     return (
         <>
@@ -34,7 +61,7 @@ export const CarTool = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.cars.map(car => <tr key={car.id}>
+                {cars.map(car => <tr key={car.id}>
                     <td>{car.id}</td>
                     <td>{car.Make}</td>
                     <td>{car.Model}</td>
@@ -48,6 +75,7 @@ export const CarTool = (props) => {
           <form>
               <div>
                     <label htmlFor="make-input">Make:</label>
+                    {/* all inputs are control components */}
                     <input type="text" id="make-input" name="make" value={carForm.make} onChange={change} />
               </div>
               <div>
@@ -66,6 +94,7 @@ export const CarTool = (props) => {
                     <label htmlFor="price-input">Price:</label>
                     <input type="number" id="price-input" name="price" value={carForm.price} onChange={change} />
               </div>
+              <button type="button" onClick={addCar}>Add new car!</button>
           </form>
         </>
     )
