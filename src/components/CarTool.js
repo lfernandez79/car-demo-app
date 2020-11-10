@@ -29,17 +29,8 @@ export const CarTool = (props) => {
         setCars(cars.concat({
             // we need the original form and generate an id getting the max value id
             ...carForm,
-            id: Math.max(...cars.map(c => c.id)) +1,
-            
+            id: Math.max(...cars.map(c => c.id)) + 1,
         }));
-        
-        setCarForm({
-            make: "",
-            model: "",
-            year: 1900,
-            color: "",
-            price: 0,
-        });
     };
 
     console.log(carForm)
