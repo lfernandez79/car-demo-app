@@ -5,19 +5,19 @@ import { CarTool } from "./components/CarTool"
 const carList = [
     {
         id: 1,
-        Make: "Volvo",
-        Model: "V60",
-        Year: 2018,
-        Color: "Perl",
-        Price: 41000,
+        make: "Volvo",
+        model: "V60",
+        year: 2018,
+        color: "Perl",
+        price: 41000,
     },
     {
         id: 2,
-        Make: "Acura",
-        Model: "TLX",
-        Year: 2019,
-        Color: "Blue",
-        Price: 43000,
+        make: "Acura",
+        model: "TLX",
+        year: 2019,
+        color: "Blue",
+        price: 43000,
     },
 ];
 

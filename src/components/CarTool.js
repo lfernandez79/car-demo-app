@@ -54,11 +54,11 @@ export const CarTool = (props) => {
             <tbody>
                 {cars.map(car => <tr key={car.id}>
                     <td>{car.id}</td>
-                    <td>{car.Make}</td>
-                    <td>{car.Model}</td>
-                    <td>{car.Year}</td>
-                    <td>{car.Color}</td>
-                    <td>{car.Price}</td>
+                    <td>{car.make}</td>
+                    <td>{car.model}</td>
+                    <td>{car.year}</td>
+                    <td>{car.color}</td>
+                    <td>{car.price}</td>
                 </tr>)}
             </tbody>
           </table>
