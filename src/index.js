@@ -19,6 +19,14 @@ const carList = [
         color: "Blue",
         price: 43000,
     },
+    {
+        id: 3,
+        make: "Lexus",
+        model: "IS350",
+        year: 2019,
+        color: "Orange",
+        price: 43500,
+    },
 ];
 
 ReactDOM.render(
