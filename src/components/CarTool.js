@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-export const CarTool = (props) => {
+// Destructuring cars from props then using an alias due cars will conflic with cars line 15 cars 
+export const CarTool = ({ cars: initialCars }) => {
     // carFrom: current state data, setCarForm: function to update the current data and re-dender
     const [ carForm, setCarForm ] = useState({
         make: "",
@@ -11,16 +12,18 @@ export const CarTool = (props) => {
     });
     
     // add the new car to existing array
-    const [ cars, setCars ] = useState(props.cars.concat())
+    const [ cars, setCars ] = useState(initialCars.concat())
     console.log(cars)
     
-    // event onChange
-    const change = (event) => {
+    // event onChan
+    //  we are desctructuring target property using {} to its own variable from the event object
+    // you can aliesing target as well to use name, type, value
+    const change = ({ target }) => {
         setCarForm({
             ...carForm,
             // use square bracket to access "input in the form bellow, target = input" 
-            [ event.target.name ]: event.target.type === "number" 
-            ? Number(event.target.value) : event.target.value,
+            [ target.name ]: target.type === "number" 
+            ? Number(target.value) : target.value,
         });
     }
 
