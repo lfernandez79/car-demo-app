@@ -31,6 +31,14 @@ export const CarTool = (props) => {
             ...carForm,
             id: Math.max(...cars.map(c => c.id)) + 1,
         }));
+        
+        setCarForm({
+            make: "",
+            model: "",
+            year: 1900,
+            color: "",
+            price: 0,
+        });
     };
 
     console.log(carForm)
