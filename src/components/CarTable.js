@@ -1,5 +1,4 @@
 import React from "react";
-
 import { carsPropType } from "./propTypes/cars";
 
 export const CarTable = ({ cars }) => {
