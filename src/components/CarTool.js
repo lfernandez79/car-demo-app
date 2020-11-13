@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ToolHeader } from "./ToolHeader";
 
 // Destructuring cars from props then using an alias due cars will conflic with cars line 15 cars 
 export const CarTool = ({ cars: initialCars }) => {
@@ -47,10 +48,7 @@ export const CarTool = ({ cars: initialCars }) => {
     console.log(carForm)
     return (
         <>
-          <header>
-            <h1>Car Tool</h1>
-          </header>
-
+        <ToolHeader headerText="Cars Tool"/>
           <table>
             <thead>
                 <tr>
