@@ -9,10 +9,12 @@ export const ToolHeader = ({ headerText }) => {
     )
 };
 
+// Props default in case nothing in header
 ToolHeader.defaultProps = {
     headerText: "Mind Blowing",
 }
 
+// Props type to validate data type passing in
 ToolHeader.propTypes = {
     headerText: PropTypes.string,
 };
