@@ -17,7 +17,7 @@ export const CarTable = ({ cars }) => {
             <tbody>
 
                 {cars.length === 0 && <tr>
-                    <td colSpan="6">There is no cars.</td>
+                    <td colSpan="6">****There are no cars.****</td>
                 </tr>
                 }
 

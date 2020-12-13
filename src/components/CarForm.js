@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 export const CarForm = ({ onSubmitCar, buttonText }) => {
-    
+
     // carFrom: current/initial state data, setCarForm: function to update the current data and re-dender
     const [carForm, setCarForm] = useState({
         make: "",
@@ -57,7 +57,7 @@ export const CarForm = ({ onSubmitCar, buttonText }) => {
                 <label htmlFor="price-input">Price:</label>
                 <input type="number" id="price-input" name="price" value={carForm.price} onChange={change} />
             </div>
-    <button type="button" onClick={submitCar}>{buttonText}</button>
+            <button type="button" onClick={submitCar}>{buttonText}</button>
         </form>
     )
 };
