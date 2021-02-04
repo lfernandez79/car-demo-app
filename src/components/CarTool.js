@@ -19,10 +19,10 @@ export const CarTool = ({ cars: initialCars }) => {
     };
 
     return (
-        <>
+        <div className="container">
             <ToolHeader headerText="Cars Tool" />
             <CarTable cars={cars} />
             <CarForm buttonText="Add car!" onSubmitCar={addCar} />
-        </>
+        </div>
     )
 }
