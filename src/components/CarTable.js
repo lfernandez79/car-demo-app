@@ -1,7 +1,8 @@
 import React from "react";
 import { carsPropType } from "./propTypes/cars";
 
-export const CarTable = ({ cars }) => {
+
+export const CarTable = ({ cars, onDeleteCar: deleteCar }) => {
     return (
         <table>
             <thead>
@@ -12,13 +13,14 @@ export const CarTable = ({ cars }) => {
                     <th>Year</th>
                     <th>Color</th>
                     <th>Price</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
 
                 {cars.length === 0 && <tr>
                     <td colSpan="6">****There are no cars.****</td>
-                </tr>
+                    </tr>
                 }
 
                 {cars.map(car =>
@@ -29,6 +31,7 @@ export const CarTable = ({ cars }) => {
                         <td>{car.year}</td>
                         <td>{car.color}</td>
                         <td>{car.price}</td>
+                        <td><button type="button" onClick={() => deleteCar(car.id)}>Delete</button></td>
                     </tr>
                 )}
             </tbody>
