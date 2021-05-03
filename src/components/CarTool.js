@@ -24,7 +24,7 @@ export const CarTool = ({ cars: initialCars }) => {
 
     return (
         <div className="container">
-            <ToolHeader headerText="Cars Tool" />
+            <ToolHeader headerText="Car List" />
             <CarTable cars={cars} onDeleteCar={deleteCar} />
             <CarForm buttonText="Add car!" onSubmitCar={addCar} />
         </div>

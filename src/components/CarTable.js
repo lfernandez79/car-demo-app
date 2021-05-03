@@ -39,6 +39,7 @@ export const CarTable = ({ cars, onDeleteCar: deleteCar }) => {
     )
 };
 
+// if you dont pass any arry, then make an empty array
 CarTable.defaultProps = {
     cars: [],
 };
